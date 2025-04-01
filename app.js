@@ -13,7 +13,10 @@ const {Cart} = require('./model/Cart');
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
-mongoose.connect('mongodb://127.0.0.1:27017/kleEcom')
+
+
+let MONGODB_URL = 'mongodb+srv://prasannasc007:C0faun9hi65JO0Tk@cluster0.flotzfy.mongodb.net/?retryWrites=true&w=majority'
+mongoose.connect(MONGODB_URL)
 .then(()=>{
     console.log('db connect');
 }).catch((err)=>{
